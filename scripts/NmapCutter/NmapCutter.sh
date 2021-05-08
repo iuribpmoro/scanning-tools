@@ -2,9 +2,8 @@
 
 if [ "$1" == "" ]
 then
-    printBanner
-	echo "Usage: $0 scanResultsFile"
-	echo "Example: $0 ./results"
+    echo "Usage: $0 scanResultsFile"
+    echo "Example: $0 ./results"
     
     echo -e "\n"
 

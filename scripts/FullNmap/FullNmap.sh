@@ -43,7 +43,7 @@ networkScan () {
         cat $network/$host/openPorts
 
         echo "Running full analysis of the ports..."
-    	nmap -A -Pn -p $(tr '\n' , < $network/$host/openPorts) $host > $network/$host/scanResult 2> /dev/null
+    	nmap -A -sV -Pn -p $(tr '\n' , < $network/$host/openPorts) $host > $network/$host/scanResult 2> /dev/null
 
         wait
         
@@ -72,7 +72,7 @@ hostScan () {
     cat $target/openPorts
 
     echo "Running full analysis of the ports..."
-    nmap -A -Pn -p $(tr '\n' , < $target/openPorts) $target > $target/scanResult 2> /dev/null
+    nmap -A -sV -Pn -p $(tr '\n' , < $target/openPorts) $target > $target/scanResult 2> /dev/null
 
     wait
     
